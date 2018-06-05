@@ -152,11 +152,11 @@ class TelecardSmsObject(BaseSmsObject):
 		self.valid = True
 		
 	def generateDataFrame(self):
-		temp = {"CN": self.card_number, 
-			    "Difference": self.diff,
-				"Datetime": self.datetime,
-				"Action": self.action,
-				"Total": self.total,
-				"Valid": self.valid
+		temp = {"CN": [self.card_number], 
+			    "Difference": [self.diff],
+				"Datetime": [self.datetime],
+				"Action": [self.action],
+				"Total": [self.total],
+				"Valid": [self.valid]
 				}
-		return pd.DataFrame(temp, index=[0])
+		return pd.DataFrame.from_records(temp, index='Datetime')
