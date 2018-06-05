@@ -1,7 +1,9 @@
 Usage: main.py sms.data [file.cfg]
 
 cfg file format:
+
 Key1 Value1
+
 Key2 Value2
 ...
 
